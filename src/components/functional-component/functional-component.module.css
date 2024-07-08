@@ -1,0 +1,72 @@
+.functionalArea {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.headerArea {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoArea {
+  font-weight: bold;
+  font-size: 35px;
+  color:rgb(134, 73, 73);
+}
+
+
+.buttonsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  justify-content: center;
+}
+
+.topButtons {
+  display: flex;
+  gap: 2vh;
+}
+
+.bottomButtons {
+  display: flex;
+  gap: 2vh;
+}
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+
+  height: 40px;
+  width: 40px;
+
+  background-color: #323131;
+  border: 1px solid white;
+  border-radius: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 3px;
+}
+
+.button:active {
+  border: 1px solid grey;
+  color: grey;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Suisse';
+  font-weight: bold;
+  font-size: 34px;
+  gap: 30px;
+  padding-top: 50%;
+}

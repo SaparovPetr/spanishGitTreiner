@@ -1,0 +1,23 @@
+.cardContainer {
+  padding: 15px;
+  display: flex;
+  gap: 70px;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid rgb(236, 232, 232);
+  border-radius: 15px;
+  min-height: 40svh; 
+  max-height: 100%;
+}
+
+.cardWordAreaWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardWordArea {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 25px;
+}
