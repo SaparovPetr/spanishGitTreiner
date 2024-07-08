@@ -26,10 +26,10 @@ const App = () => {
     <>
       <Routes location={backgroundLocation || location}>
         <Route path='/' element={<MainPage />} />
-        <Route path='/gitTreiner/' element={<MainPage />} />
+        <Route path='/spanishGitTreiner' element={<MainPage />} />
 
         <Route
-          path='/gitTreiner/word/'
+          path='/spanishGitTreiner/word/'
           element={
             <Layout>
               <ModalContent />
@@ -40,9 +40,9 @@ const App = () => {
 
       {backgroundLocation && (
         <Routes>
-          <Route path='/gitTreiner/' element={<MainPage />} />
+          <Route path='/spanishGitTreiner/' element={<MainPage />} />
           <Route
-            path='/gitTreiner/word/'
+            path='/spanishGitTreiner/word/'
             element={
               <Layout>
                 <Modal>

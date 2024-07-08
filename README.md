@@ -1,9 +1,8 @@
 Currient version:
-[gitTreiner]()
+[SpanishGitTreiner](https://saparovpetr.github.io/spanishGitTreiner/)
 
 TODO:
 
-- make an approach counter on the finish page,
 - add animation,
 - add possibility to choose mode (wordlist),
 - add 404-page

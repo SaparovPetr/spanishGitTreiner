@@ -50,7 +50,7 @@ const FunctionalComponent = memo(() => {
               </div>
               <Link
                 className={styles.button}
-                to={'/gitTreiner/word'}
+                to={'/spanishGitTreiner/word'}
                 state={{ backgroundLocation: location }}
               >
                 &uarr;
