@@ -26,7 +26,7 @@ const App = () => {
     <>
       <Routes location={backgroundLocation || location}>
         <Route path='/' element={<MainPage />} />
-        <Route path='/spanishGitTreiner' element={<MainPage />} />
+        <Route path='/spanishGitTreiner/' element={<MainPage />} />
 
         <Route
           path='/spanishGitTreiner/word/'
