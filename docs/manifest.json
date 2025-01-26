@@ -1,7 +1,7 @@
 {
-  "name": "GitTreiner",
-  "short_name": "GitTreiner",
-  "start_url": "https://saparovpetr.github.io/gitTreiner/",
+  "name": "spanishGitTreiner",
+  "short_name": "spanishGitTreiner",
+  "start_url": "https://saparovpetr.github.io/spanishGitTreiner/",
   "display": "standalone",
   "description": "A description for your application",
   "lang": " The default language of your application",
