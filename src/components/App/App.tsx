@@ -91,9 +91,9 @@ const App = () => {
         <Route path='/' element={<MainPage />} />
         <Route path='*' element={<NotFound404 />} />
 
-        <Route path='/gitTreiner' element={<MainPage />} />
+        <Route path='/spanishGitTreiner' element={<MainPage />} />
         <Route
-          path='/gitTreiner/word'
+          path='/spanishGitTreiner/word'
           element={
             <Layout>
               <WordModalContent
@@ -105,7 +105,7 @@ const App = () => {
           }
         />
         <Route
-          path='/gitTreiner/setting'
+          path='/spanishGitTreiner/setting'
           element={
             <Layout>
               <SettingModalContent closeModal={closeModal} />
@@ -115,9 +115,9 @@ const App = () => {
       </Routes>
       {backgroundLocation && (
         <Routes>
-          <Route path='/gitTreiner' element={<MainPage />} />
+          <Route path='/spanishGitTreiner' element={<MainPage />} />
           <Route
-            path='/gitTreiner/word'
+            path='/spanishGitTreiner/word'
             element={
               <Layout>
                 <Modal closeModal={closeModal}>
@@ -131,7 +131,7 @@ const App = () => {
             }
           />
           <Route
-            path='/gitTreiner/setting'
+            path='/spanishGitTreiner/setting'
             element={
               <Layout>
                 <Modal closeModal={closeModal}>
