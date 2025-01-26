@@ -1,57 +1,69 @@
-import React, { StrictMode, useEffect, useState } from 'react';
-import styles from './option-list.module.css';
+import { useState } from 'react';
+
+import { removeWord } from '@slices/words-slice';
+import { getCurrientBase } from '@utils/get-currient-base';
+import { getRandomElement } from '@utils/get-random-element';
+import { currientModeFromLocalStorage } from '@utils/localstorage-functionality';
+import { shuffle } from '@utils/shuffle-array';
 import { TOneWord } from '@utils-types';
-import { getRandomElement } from '../../utils/get-random-element';
-import { myBase } from '../../spanish500';
-import { shuffle } from '../../utils/shuffle-array';
-import { deleteWord } from '../../services/thunks/thunk';
-import {
-  selectCurrientLanguage,
-  switchLanguageState
-} from '../../services/slices/translation-slace';
-import { useAppDispatch, useAppSelector } from '../../services/store';
 
-const OptionList = (targerO: TOneWord) => {
-  const second = getRandomElement(myBase);
-  const third = getRandomElement(myBase);
-  const fourth = getRandomElement(myBase);
-  const shuffledArrey = shuffle([targerO, second, third, fourth]);
-  const [preparedArrey, setArrey] = useState(shuffledArrey);
-  const dispatch = useAppDispatch();
-  const currientLanguage = useAppSelector(selectCurrientLanguage);
+import styles from './option-list.module.css';
+import { useAppDispatch } from '../../services/store';
 
-  const skipWordCallback = (id: string) => {
-    dispatch(deleteWord(id));
-    if (currientLanguage === 'inRussian') {
-      dispatch(switchLanguageState('inEnglish'));
-    }
+/** компоненет списка ответов */
+const OptionList =
+  // (заметка № 8)
+  (targetObject: TOneWord) => {
+    const dispatch = useAppDispatch();
+
+    const currientBase = getCurrientBase(currientModeFromLocalStorage);
+    // (заметка № 9)
+    const thirdOption = getRandomElement(currientBase);
+    const secondOption = getRandomElement(currientBase);
+    const fourthOption = getRandomElement(currientBase);
+    // (заметка № 10)
+    const shuffledArrey = shuffle([
+      targetObject,
+      secondOption,
+      thirdOption,
+      fourthOption
+    ]);
+
+    // (заметка № 11)
+    /** запись в стейт подготовленного массива для его сохранения при ререндеринге */
+    const [preparedArrey] = useState(shuffledArrey);
+
+    /** удаление Рабочего элемента из Коллекции */
+    const skipWordCallback = (id: string) => {
+      dispatch(removeWord({ id }));
+    };
+
+    // (заметка № 12)
+    const choseOption = (e: any) => {
+      if (e.target.textContent === targetObject.translating) {
+        skipWordCallback(targetObject.id);
+      } else {
+        e.target.style.color = 'gray';
+        e.target.style.border = '1px solid gray';
+      }
+    };
+
+    return (
+      <div className={styles.fourOptions}>
+        <div key={2} className={styles.option} onClick={choseOption}>
+          {preparedArrey[0].translating}
+        </div>
+        <div key={3} className={styles.option} onClick={choseOption}>
+          {preparedArrey[1].translating}
+        </div>
+        <div key={4} className={styles.option} onClick={choseOption}>
+          {preparedArrey[2].translating}
+        </div>
+        <div key={5} className={styles.option} onClick={choseOption}>
+          {preparedArrey[3].translating}
+        </div>
+      </div>
+    );
   };
-
-  const choseOption = (e: any) => {
-    if (e.target.textContent === targerO.translating) {
-      skipWordCallback(targerO.id);
-    } else {
-      e.target.style.color = 'gray';
-      e.target.style.border = '1px solid gray';
-    }
-  };
-
-  return (
-    <div className={styles.fourOptions}>
-      <div key={2} className={styles.option} onClick={choseOption}>
-        {preparedArrey[0].translating}
-      </div>
-      <div key={3} className={styles.option} onClick={choseOption}>
-        {preparedArrey[1].translating}
-      </div>
-      <div key={4} className={styles.option} onClick={choseOption}>
-        {preparedArrey[2].translating}
-      </div>
-      <div key={5} className={styles.option} onClick={choseOption}>
-        {preparedArrey[3].translating}
-      </div>
-    </div>
-  );
-};
 
 export default OptionList;

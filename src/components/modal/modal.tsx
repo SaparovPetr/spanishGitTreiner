@@ -1,31 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styles from './modal.module.css';
+import React, { memo, useEffect, useRef } from 'react';
 
-export const Modal = ({ children }: React.PropsWithChildren) => {
+import { selectModalState, setShowModal } from '@slices/modal-slice';
+import { TModalProps } from '@utils-types';
+import { CSSTransition } from 'react-transition-group';
+
+import './modal.css';
+import styles from './modal.module.css';
+import { useAppDispatch, useAppSelector } from '../../services/store';
+
+export const Modal = memo(({ children, closeModal }: TModalProps) => {
+  const showModal = useAppSelector(selectModalState);
+  const nodeRef = useRef(null);
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
+    dispatch(setShowModal(true));
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        navigate(-1);
-      }
+      if (e.key === 'Escape') closeModal();
     };
     document.addEventListener('keydown', handleEsc);
     return () => document.removeEventListener('keydown', handleEsc);
   }, []);
 
-  const navigate = useNavigate();
-  const onClose = () => {
-    navigate(-1);
-  };
-
   return (
     <>
-      <div className={styles.overlay} onClick={onClose} />
-      <div className={styles.popup}>
-        {children}
-        <button className={styles.popupButton} onClick={onClose} />
-      </div>
+      <CSSTransition
+        in={showModal}
+        nodeRef={nodeRef}
+        timeout={200}
+        classNames='modal'
+        unmountOnExit
+      >
+        <div className='modal' ref={nodeRef}>
+          <div className={styles.overlay} onClick={closeModal} />
+          <div className={styles.popup}>{children}</div>
+        </div>
+      </CSSTransition>
     </>
   );
-};
+});

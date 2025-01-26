@@ -1,0 +1,41 @@
+/* stylelint-disable no-duplicate-selectors */
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+}
+
+.phraseZone {
+  color: white;
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+}
+
+.buttonsZone {
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.twoButtons {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+}
+
+iframe {
+  width: 257px;
+}
+
+@media (height <= 620px) {  
+  .modalContent {
+    gap: 8px;  
+  }
+
+  .buttonsZone {
+    gap: 8px
+  }
+}

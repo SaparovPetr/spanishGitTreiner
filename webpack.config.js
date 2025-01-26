@@ -1,7 +1,8 @@
 const path = require('path');
+
+const Dotenv = require('dotenv-webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.tsx'),
@@ -75,14 +76,13 @@ module.exports = {
       '.jpg'
     ],
     alias: {
+      '@': path.resolve(__dirname, 'src/'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@components': path.resolve(__dirname, './src/components'),
-      '@ui': path.resolve(__dirname, './src/components/ui'),
-      '@ui-pages': path.resolve(__dirname, './src/components/ui/pages'),
+      '@utils': path.resolve(__dirname, './src/utils'),
       '@utils-types': path.resolve(__dirname, './src/utils/types'),
-      '@api': path.resolve(__dirname, './src/utils/burger-api.ts'),
       '@slices': path.resolve(__dirname, './src/services/slices'),
-      '@selectors': path.resolve(__dirname, './src/services/selectors')
+      '@word-bases': path.resolve(__dirname, './src/word-bases')
     }
   },
   output: {
@@ -93,6 +93,6 @@ module.exports = {
     static: path.join(__dirname, './dist'),
     compress: true,
     historyApiFallback: true,
-    port: 5000
+    port: 7000
   }
 };

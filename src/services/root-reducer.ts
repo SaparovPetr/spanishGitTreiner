@@ -1,10 +1,15 @@
 import { combineReducers } from '@reduxjs/toolkit';
+
+import { counterSlice } from './slices/counter-slice';
+import { modalSlice } from './slices/modal-slice';
+import { modeSlice } from './slices/mode-slice';
 import { wordsSlice } from './slices/words-slice';
-import { translationSlice } from './slices/translation-slace';
 
 const rootReducer = combineReducers({
+  [counterSlice.name]: counterSlice.reducer,
   [wordsSlice.name]: wordsSlice.reducer,
-  [translationSlice.name]: translationSlice.reducer
+  [modalSlice.name]: modalSlice.reducer,
+  [modeSlice.name]: modeSlice.reducer
 });
 
 export default rootReducer;
