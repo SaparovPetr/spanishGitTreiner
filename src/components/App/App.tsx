@@ -46,39 +46,39 @@ const App = () => {
   };
 
   useEffect(() => {
-    if (!currientModeFromLocalStorage) {
+    if (!localStorage.getItem('currientMode')) {
       dispatch(setMode(AppMode.Dif)); // (заметка № 1)
     }
 
-    if (currientModeFromLocalStorage) {
-      dispatch(setMode(currientModeFromLocalStorage));
+    if (localStorage.getItem('currientMode')) {
+      dispatch(setMode(localStorage.getItem('currientMode')));
     }
 
-    if (currientModeFromLocalStorage === AppMode.Dif) {
+    if (localStorage.getItem('currientMode') === AppMode.Dif) {
       dispatch(makeCollection(difWordBase)); // (заметка № 2)
     }
 
-    if (currientModeFromLocalStorage === AppMode.ThreeK) {
+    if (localStorage.getItem('currientMode') === AppMode.ThreeK) {
       dispatch(makeCollection(threeThousandWordBase));
     }
 
-    if (currientModeFromLocalStorage === AppMode.A) {
+    if (localStorage.getItem('currientMode') === AppMode.A) {
       dispatch(makeCollection(aWordBase));
     }
 
-    if (currientModeFromLocalStorage === AppMode.B1) {
+    if (localStorage.getItem('currientMode') === AppMode.B1) {
       dispatch(makeCollection(bOneWordBase));
     }
 
-    if (currientModeFromLocalStorage === AppMode.B2) {
+    if (localStorage.getItem('currientMode') === AppMode.B2) {
       dispatch(makeCollection(bTwoWordBase));
     }
 
-    if (currientModeFromLocalStorage === AppMode.Es400) {
+    if (localStorage.getItem('currientMode') === AppMode.Es400) {
       dispatch(makeCollection(spanish400));
     }
 
-    if (currientModeFromLocalStorage === AppMode.Es500) {
+    if (localStorage.getItem('currientMode') === AppMode.Es500) {
       dispatch(makeCollection(spanish500));
     }
 

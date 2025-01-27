@@ -20,7 +20,7 @@ export const setEntryInLocalStorage = (key: string, value: string) => {
  * получение из localStorage текущего режима
  */
 export const currientModeFromLocalStorage =
-  localStorage.getItem(`currientMode`);
+  localStorage.getItem('currientMode');
 
 /**
  * получение из localStorage данных о количестве подходов за сегодня

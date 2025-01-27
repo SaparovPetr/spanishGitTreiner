@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { removeWord } from '@slices/words-slice';
 import { getCurrientBase } from '@utils/get-currient-base';
 import { getRandomElement } from '@utils/get-random-element';
-import { currientModeFromLocalStorage } from '@utils/localstorage-functionality';
 import { shuffle } from '@utils/shuffle-array';
 import { TOneWord } from '@utils-types';
 
@@ -16,7 +15,7 @@ const OptionList =
   (targetObject: TOneWord) => {
     const dispatch = useAppDispatch();
 
-    const currientBase = getCurrientBase(currientModeFromLocalStorage);
+    const currientBase = getCurrientBase(localStorage.getItem('currientMode'));
     // (заметка № 9)
     const thirdOption = getRandomElement(currientBase);
     const secondOption = getRandomElement(currientBase);

@@ -32,30 +32,37 @@ export const MainPage: FC = () => {
     if (currientMode === AppMode.Dif) {
       dispatch(setMode(AppMode.ThreeK));
       dispatch(makeCollection(threeThousandWordBase));
+      console.log(currientMode);
     }
     if (currientMode === AppMode.ThreeK) {
       dispatch(setMode(AppMode.A));
       dispatch(makeCollection(aWordBase));
+      console.log(currientMode);
     }
     if (currientMode === AppMode.A) {
       dispatch(setMode(AppMode.B1));
       dispatch(makeCollection(bOneWordBase));
+      console.log(currientMode);
     }
     if (currientMode === AppMode.B1) {
       dispatch(setMode(AppMode.B2));
       dispatch(makeCollection(bTwoWordBase));
+      console.log(currientMode);
     }
     if (currientMode === AppMode.B2) {
       dispatch(setMode(AppMode.Es400));
       dispatch(makeCollection(spanish400));
+      console.log(currientMode);
     }
     if (currientMode === AppMode.Es400) {
       dispatch(setMode(AppMode.Es500));
       dispatch(makeCollection(spanish500));
+      console.log(currientMode);
     }
     if (currientMode === AppMode.Es500) {
       dispatch(setMode(AppMode.Dif));
       dispatch(makeCollection(difWordBase));
+      console.log(currientMode);
     }
   };
 
