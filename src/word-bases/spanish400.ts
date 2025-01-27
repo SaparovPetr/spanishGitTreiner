@@ -2068,6 +2068,7 @@ export const spanish400 = [
     targetWord: 'café',
     translating: 'кофе',
     audioURL:
-      'https://d1vq87e9lcf771.cloudfront.net/beaes/325da5dd32510601a6f9a87a4be51ba7'
+      'https://d1vq87e9lcf771.cloudfront.net/beaes/325da5dd32510601a6f9a87a4be51ba7',
+    skyid: null
   }
 ];

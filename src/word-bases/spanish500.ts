@@ -510,5 +510,5 @@
   { targetWord: 'lluvia', translating: 'дождь', skyid: null },
   { targetWord: 'viento', translating: 'ветер', skyid: null },
   { targetWord: 'nieve', translating: 'снег', skyid: null },
-  { targetWord: 'cielo', translating: 'небо	' }
+  { targetWord: 'cielo', translating: 'небо', skyid: null }
 ];

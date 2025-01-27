@@ -31,45 +31,31 @@ export const MainPage: FC = () => {
   const changeMode = () => {
     if (currientMode === AppMode.Dif) {
       dispatch(setMode(AppMode.ThreeK));
-      if (threeThousandWordBase) {
-        dispatch(makeCollection(threeThousandWordBase));
-      }
+      dispatch(makeCollection(threeThousandWordBase));
     }
     if (currientMode === AppMode.ThreeK) {
       dispatch(setMode(AppMode.A));
-      if (aWordBase) {
-        dispatch(makeCollection(aWordBase));
-      }
+      dispatch(makeCollection(aWordBase));
     }
     if (currientMode === AppMode.A) {
       dispatch(setMode(AppMode.B1));
-      if (bOneWordBase) {
-        dispatch(makeCollection(bOneWordBase));
-      }
+      dispatch(makeCollection(bOneWordBase));
     }
     if (currientMode === AppMode.B1) {
       dispatch(setMode(AppMode.B2));
-      if (bTwoWordBase) {
-        dispatch(makeCollection(bTwoWordBase));
-      }
+      dispatch(makeCollection(bTwoWordBase));
     }
     if (currientMode === AppMode.B2) {
       dispatch(setMode(AppMode.Es400));
-      if (spanish400) {
-        dispatch(makeCollection(spanish400));
-      }
+      dispatch(makeCollection(spanish400));
     }
     if (currientMode === AppMode.Es400) {
       dispatch(setMode(AppMode.Es500));
-      if (spanish500) {
-        dispatch(makeCollection(spanish500));
-      }
+      dispatch(makeCollection(spanish500));
     }
     if (currientMode === AppMode.Es500) {
       dispatch(setMode(AppMode.Dif));
-      if (difWordBase) {
-        dispatch(makeCollection(difWordBase));
-      }
+      dispatch(makeCollection(difWordBase));
     }
   };
 
