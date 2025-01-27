@@ -395,7 +395,7 @@
   { targetWord: 'que', translating: 'что (союз)', skyid: null },
   { targetWord: 'aquí', translating: 'здесь', skyid: null },
   { targetWord: 'allí', translating: 'там', skyid: null },
-  { targetWord: 'acá- сюда', skyid: null },
+  { targetWord: 'acá', translating: 'сюда', skyid: null },
   { targetWord: 'allá', translating: 'туда', skyid: null },
   { targetWord: 'ahora', translating: 'сейчас, теперь', skyid: null },
   { targetWord: 'ya', translating: 'уже', skyid: null },

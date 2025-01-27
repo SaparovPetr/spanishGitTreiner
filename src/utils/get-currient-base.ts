@@ -1,3 +1,6 @@
+import { spanish400 } from '@word-bases/spanish400';
+import { spanish500 } from '@word-bases/spanish500';
+
 import { threeThousandWordBase } from '../word-bases/3k';
 import { aWordBase } from '../word-bases/a';
 import { bOneWordBase } from '../word-bases/b-one';
@@ -20,5 +23,9 @@ export const getCurrientBase = (mode: string | null) => {
     return bOneWordBase;
   } else if (mode === 'B2') {
     return bTwoWordBase;
+  } else if (mode === 'es400') {
+    return spanish400;
+  } else if (mode === 'es500') {
+    return spanish500;
   }
 };

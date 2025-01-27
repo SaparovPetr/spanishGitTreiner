@@ -8,6 +8,8 @@ import { aWordBase } from '@word-bases/a';
 import { bOneWordBase } from '@word-bases/b-one';
 import { bTwoWordBase } from '@word-bases/b-two';
 import { difWordBase } from '@word-bases/dif';
+import { spanish400 } from '@word-bases/spanish400';
+import { spanish500 } from '@word-bases/spanish500';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './style.module.css';
@@ -34,6 +36,12 @@ export const NotFound404: FC = () => {
     }
     if (currientMode === AppMode.B2) {
       dispatch(makeCollection(bTwoWordBase));
+    }
+    if (currientMode === AppMode.Es400) {
+      dispatch(makeCollection(spanish400));
+    }
+    if (currientMode === AppMode.Es500) {
+      dispatch(makeCollection(spanish500));
     }
     navigate(-1);
   };
