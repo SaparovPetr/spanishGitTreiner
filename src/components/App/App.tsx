@@ -20,8 +20,6 @@ import { aWordBase } from '@word-bases/a';
 import { bOneWordBase } from '@word-bases/b-one';
 import { bTwoWordBase } from '@word-bases/b-two';
 import { difWordBase } from '@word-bases/dif';
-import { spanish400 } from '@word-bases/spanish400';
-import { spanish500 } from '@word-bases/spanish500';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import { useAppDispatch } from '../../services/store';
@@ -74,14 +72,6 @@ const App = () => {
       dispatch(makeCollection(bTwoWordBase));
     }
 
-    if (currientModeFromLocalStorage === AppMode.Es400) {
-      dispatch(makeCollection(spanish400));
-    }
-
-    if (currientModeFromLocalStorage === AppMode.Es500) {
-      dispatch(makeCollection(spanish500));
-    }
-
     dispatch(setCounter(Number(counterFromLocalStorage)));
   }, []);
 
@@ -91,9 +81,9 @@ const App = () => {
         <Route path='/' element={<MainPage />} />
         <Route path='*' element={<NotFound404 />} />
 
-        <Route path='/spanishGitTreiner' element={<MainPage />} />
+        <Route path='/gitTreiner' element={<MainPage />} />
         <Route
-          path='/spanishGitTreiner/word'
+          path='/gitTreiner/word'
           element={
             <Layout>
               <WordModalContent
@@ -105,7 +95,7 @@ const App = () => {
           }
         />
         <Route
-          path='/spanishGitTreiner/setting'
+          path='/gitTreiner/setting'
           element={
             <Layout>
               <SettingModalContent closeModal={closeModal} />
@@ -115,9 +105,9 @@ const App = () => {
       </Routes>
       {backgroundLocation && (
         <Routes>
-          <Route path='/spanishGitTreiner' element={<MainPage />} />
+          <Route path='/gitTreiner' element={<MainPage />} />
           <Route
-            path='/spanishGitTreiner/word'
+            path='/gitTreiner/word'
             element={
               <Layout>
                 <Modal closeModal={closeModal}>
@@ -131,7 +121,7 @@ const App = () => {
             }
           />
           <Route
-            path='/spanishGitTreiner/setting'
+            path='/gitTreiner/setting'
             element={
               <Layout>
                 <Modal closeModal={closeModal}>

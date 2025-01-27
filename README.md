@@ -24,11 +24,11 @@
 
 ## ДЕПЛОЙ по ссылке:
 
-[spanishGitTreiner](https://saparovpetr.github.io/spanishGitTreiner/)
+[gitTreiner](https://saparovpetr.github.io/gitTreiner/)
 
 ## КАК РАБОТАЕТ ПРИЛОЖЕНИЕ:
 
-- Пользователь может форкнуть в свой профиль мой публичный [репозиторий](https://github.com/spanishGitTreiner/mdSpanishWords/) с незаполненными маркдаун-файлами и (по желанию) переименовать его.
+- Пользователь может форкнуть в свой профиль мой публичный [репозиторий](https://github.com/SaparovPetr/emptyMdFilesForFork/) с незаполненными маркдаун-файлами и (по желанию) переименовать его.
 
 - На странице настроек указать имя своего профиля и название ранее форкнутого репозитория.
 

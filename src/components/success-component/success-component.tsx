@@ -35,13 +35,6 @@ const SuccessComponent: FC = () => {
     if (currientMode === AppMode.B2) {
       dispatch(makeCollection(bTwoWordBase));
     }
-    if (currientMode === AppMode.Es400) {
-      dispatch(makeCollection(AppMode.Es400));
-    }
-    if (currientMode === AppMode.Es500) {
-      dispatch(makeCollection(AppMode.Es500));
-    }
-
     dispatch(setCounter(1));
   };
 

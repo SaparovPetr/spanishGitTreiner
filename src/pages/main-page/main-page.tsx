@@ -12,8 +12,6 @@ import { aWordBase } from '@word-bases/a';
 import { bOneWordBase } from '@word-bases/b-one';
 import { bTwoWordBase } from '@word-bases/b-two';
 import { difWordBase } from '@word-bases/dif';
-import { spanish400 } from '@word-bases/spanish400';
-import { spanish500 } from '@word-bases/spanish500';
 import { Link, useLocation } from 'react-router-dom';
 
 import styles from './main-page.module.css';
@@ -31,45 +29,23 @@ export const MainPage: FC = () => {
   const changeMode = () => {
     if (currientMode === AppMode.Dif) {
       dispatch(setMode(AppMode.ThreeK));
-      if (threeThousandWordBase) {
-        dispatch(makeCollection(threeThousandWordBase));
-      }
+      dispatch(makeCollection(threeThousandWordBase));
     }
     if (currientMode === AppMode.ThreeK) {
       dispatch(setMode(AppMode.A));
-      if (aWordBase) {
-        dispatch(makeCollection(aWordBase));
-      }
+      dispatch(makeCollection(aWordBase));
     }
     if (currientMode === AppMode.A) {
       dispatch(setMode(AppMode.B1));
-      if (bOneWordBase) {
-        dispatch(makeCollection(bOneWordBase));
-      }
+      dispatch(makeCollection(bOneWordBase));
     }
     if (currientMode === AppMode.B1) {
       dispatch(setMode(AppMode.B2));
-      if (bTwoWordBase) {
-        dispatch(makeCollection(bTwoWordBase));
-      }
+      dispatch(makeCollection(bTwoWordBase));
     }
     if (currientMode === AppMode.B2) {
-      dispatch(setMode(AppMode.Es400));
-      if (spanish400) {
-        dispatch(makeCollection(spanish400));
-      }
-    }
-    if (currientMode === AppMode.Es400) {
-      dispatch(setMode(AppMode.Es500));
-      if (spanish500) {
-        dispatch(makeCollection(spanish500));
-      }
-    }
-    if (currientMode === AppMode.Es500) {
       dispatch(setMode(AppMode.Dif));
-      if (difWordBase) {
-        dispatch(makeCollection(difWordBase));
-      }
+      dispatch(makeCollection(difWordBase));
     }
   };
 
@@ -87,7 +63,7 @@ export const MainPage: FC = () => {
 
           <Link
             className={styles.settingButton}
-            to='/spanishGitTreiner/setting'
+            to='/gitTreiner/setting'
             state={{ backgroundLocation: locationInTheApp }}
           >
             <p className={styles.text}>≡</p>

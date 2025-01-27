@@ -5,7 +5,6 @@ export type TOneWord = {
   targetWord: string;
   translating: string;
   id: string;
-  audioURL?: string;
 };
 
 /** виды режимов приложения (уровня изучаемых слов) */
@@ -14,9 +13,7 @@ export const enum AppMode {
   ThreeK = '3K',
   A = 'A',
   B1 = 'B1',
-  B2 = 'B2',
-  Es400 = 'es400',
-  Es500 = 'es500'
+  B2 = 'B2'
 }
 
 /** типизация пользователя */
